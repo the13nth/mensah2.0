@@ -1,0 +1,41 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="users"></ion-back-button>
+      </ion-buttons>
+      <ion-title>
+        User
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <form [formGroup]="userForm" (ngSubmit)="submit()">
+    <ion-item>
+        <ion-label position="stacked">Username</ion-label>
+        <ion-input formControlName="Username"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Password</ion-label>
+        <ion-input formControlName="Password"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">User Role</ion-label>
+        <ion-input formControlName="Role"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Location</ion-label>
+        <ion-input formControlName="User Location"></ion-input>
+      </ion-item>
+      
+      <ion-button type="submit" expand="block" class="ion-padding-horizontal ion-margin-vertical"
+      [disabled]="!userForm.valid">
+        Save
+      </ion-button>
+
+      <ion-button *ngIf="id" (click)="delete()" type="button" expand="block" class="ion-padding-horizontal ion-margin-vertical" color="danger">
+        Delete
+      </ion-button>
+    </form>
+  </ion-content>
+  

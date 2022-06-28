@@ -1,0 +1,49 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="buses"></ion-back-button>
+      </ion-buttons>
+      <ion-title>
+        Bus
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <form [formGroup]="busForm" (ngSubmit)="submit()">
+    <ion-item>
+        <ion-label position="stacked">BUS ID</ion-label>
+        <ion-input formControlName="bus_id"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">BUS COMPANY</ion-label>
+        <ion-input formControlName="bus_company"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">BUS PLATE</ion-label>
+        <ion-input formControlName="bus_plate"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">BUS ROUTE</ion-label>
+        <ion-input formControlName="bus_route"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">BUS LIVE LOCATION lat</ion-label>
+        <ion-input formControlName="bus_location_lat"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">BUS LIVE LOCATION long</ion-label>
+        <ion-input formControlName="bus_location_long"></ion-input>
+      </ion-item>
+      
+      <ion-button type="submit" expand="block" class="ion-padding-horizontal ion-margin-vertical"
+      [disabled]="!busForm.valid">
+        Save
+      </ion-button>
+
+      <ion-button *ngIf="id" (click)="delete()" type="button" expand="block" class="ion-padding-horizontal ion-margin-vertical" color="danger">
+        Delete
+      </ion-button>
+    </form>
+  </ion-content>
+  

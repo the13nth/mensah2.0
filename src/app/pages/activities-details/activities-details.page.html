@@ -1,0 +1,45 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="activitieses"></ion-back-button>
+      </ion-buttons>
+      <ion-title>
+        Activities
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <form [formGroup]="activitiesForm" (ngSubmit)="submit()">
+    <ion-item>
+        <ion-label position="stacked">Activity ID</ion-label>
+        <ion-input formControlName="activity_id"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Activity name</ion-label>
+        <ion-input formControlName="activity_name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Activity details</ion-label>
+        <ion-input formControlName="activity_details"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">latitude</ion-label>
+        <ion-input formControlName="activity_lat"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">longitude</ion-label>
+        <ion-input formControlName="activity_long"></ion-input>
+      </ion-item>
+      
+      <ion-button type="submit" expand="block" class="ion-padding-horizontal ion-margin-vertical"
+      [disabled]="!activitiesForm.valid">
+        Save
+      </ion-button>
+
+      <ion-button *ngIf="id" (click)="delete()" type="button" expand="block" class="ion-padding-horizontal ion-margin-vertical" color="danger">
+        Delete
+      </ion-button>
+    </form>
+  </ion-content>
+  

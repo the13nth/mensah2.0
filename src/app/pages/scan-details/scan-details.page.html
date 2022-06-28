@@ -1,0 +1,41 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="scans"></ion-back-button>
+      </ion-buttons>
+      <ion-title>
+        Scan
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <form [formGroup]="scanForm" (ngSubmit)="submit()">
+    <ion-item>
+        <ion-label position="stacked">Scan ID</ion-label>
+        <ion-input formControlName="Scan_ID"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Scan type</ion-label>
+        <ion-input formControlName="scan_type"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Scanned data</ion-label>
+        <ion-input formControlName="scanned_data"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Price</ion-label>
+        <ion-input formControlName="scanned_item_price"></ion-input>
+      </ion-item>
+      
+      <ion-button type="submit" expand="block" class="ion-padding-horizontal ion-margin-vertical"
+      [disabled]="!scanForm.valid">
+        Save
+      </ion-button>
+
+      <ion-button *ngIf="id" (click)="delete()" type="button" expand="block" class="ion-padding-horizontal ion-margin-vertical" color="danger">
+        Delete
+      </ion-button>
+    </form>
+  </ion-content>
+  

@@ -1,0 +1,53 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="routes"></ion-back-button>
+      </ion-buttons>
+      <ion-title>
+        Route
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <form [formGroup]="routeForm" (ngSubmit)="submit()">
+    <ion-item>
+        <ion-label position="stacked">ROUTE ID</ion-label>
+        <ion-input formControlName="route_id"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">SERVICING COMPANY</ion-label>
+        <ion-input formControlName="servicing_company"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">ROUTE NAME</ion-label>
+        <ion-input formControlName="route_name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">ROUTE BUSES</ion-label>
+        <ion-input formControlName="route_buses"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">ROUTE_BUS_STOPS</ion-label>
+        <ion-input formControlName="route_bus_stops"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">ROUTE COORDS LAT</ion-label>
+        <ion-input formControlName="route_coords_lat"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">ROUTE COORDS LONG</ion-label>
+        <ion-input formControlName="route_coords_long"></ion-input>
+      </ion-item>
+      
+      <ion-button type="submit" expand="block" class="ion-padding-horizontal ion-margin-vertical"
+      [disabled]="!routeForm.valid">
+        Save
+      </ion-button>
+
+      <ion-button *ngIf="id" (click)="delete()" type="button" expand="block" class="ion-padding-horizontal ion-margin-vertical" color="danger">
+        Delete
+      </ion-button>
+    </form>
+  </ion-content>
+  

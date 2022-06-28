@@ -1,0 +1,45 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="passengers"></ion-back-button>
+      </ion-buttons>
+      <ion-title>
+        Passenger
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <form [formGroup]="passengerForm" (ngSubmit)="submit()">
+    <ion-item>
+        <ion-label position="stacked">PASSENGER_ID</ion-label>
+        <ion-input formControlName="passenger_id"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">FREQUENT ROUTES</ion-label>
+        <ion-input formControlName="p_route_sub"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">PASSENGER LIVE LOCATION</ion-label>
+        <ion-input formControlName="p_loc_watch"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Passenger lat</ion-label>
+        <ion-input formControlName="Passenger_lat"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Passenger long</ion-label>
+        <ion-input formControlName="Passenger_long"></ion-input>
+      </ion-item>
+      
+      <ion-button type="submit" expand="block" class="ion-padding-horizontal ion-margin-vertical"
+      [disabled]="!passengerForm.valid">
+        Save
+      </ion-button>
+
+      <ion-button *ngIf="id" (click)="delete()" type="button" expand="block" class="ion-padding-horizontal ion-margin-vertical" color="danger">
+        Delete
+      </ion-button>
+    </form>
+  </ion-content>
+  

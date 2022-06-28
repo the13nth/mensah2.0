@@ -1,0 +1,53 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="busstops"></ion-back-button>
+      </ion-buttons>
+      <ion-title>
+        Busstop
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <form [formGroup]="busstopForm" (ngSubmit)="submit()">
+    <ion-item>
+        <ion-label position="stacked">BUS_STOP_ID</ion-label>
+        <ion-input formControlName="bus_stop_id"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">ROUTE ID</ion-label>
+        <ion-input formControlName="route_id"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">GIS LOCATION</ion-label>
+        <ion-input formControlName="bus_stop_loc_watch"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">SUBSCRIBED PASSENGER</ion-label>
+        <ion-input formControlName="passengers_sub"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">LIVE PASSENGER COUNT</ion-label>
+        <ion-input formControlName="live_passenger_count"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Bus STOP lat</ion-label>
+        <ion-input formControlName="bus_stop_lat"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Bus STOP long</ion-label>
+        <ion-input formControlName="bus_stop_long"></ion-input>
+      </ion-item>
+      
+      <ion-button type="submit" expand="block" class="ion-padding-horizontal ion-margin-vertical"
+      [disabled]="!busstopForm.valid">
+        Save
+      </ion-button>
+
+      <ion-button *ngIf="id" (click)="delete()" type="button" expand="block" class="ion-padding-horizontal ion-margin-vertical" color="danger">
+        Delete
+      </ion-button>
+    </form>
+  </ion-content>
+  
