@@ -8,51 +8,25 @@
 </ion-header>
 
 <ion-content>
-  <!--
-  <ion-item button routerLink="routes" class="ion-text-capitalize">
-    routes
-  </ion-item>
+  <div class="grid">
+  <ion-card class="card-lines">
+    <ion-card-header>
+      <ion-card-subtitle>Your closest bus station is:</ion-card-subtitle>
+      <ion-card-title>{{livepassengercountlocation}}</ion-card-title>
+    </ion-card-header>
   
-  <ion-item button routerLink="passengers" class="ion-text-capitalize">
-    passengers
-  </ion-item>
-  
-  <ion-item button routerLink="buses" class="ion-text-capitalize">
-    buses
-  </ion-item>
-  
-  <ion-item button routerLink="busstops" class="ion-text-capitalize">
-    busstops
-  </ion-item>
-  
-  <ion-item button routerLink="users" class="ion-text-capitalize">
-    users
-  </ion-item>
-  
-  <ion-item button routerLink="activitieses" class="ion-text-capitalize">
-    activitieses
-  </ion-item>
-  
-  <ion-item button routerLink="scans" class="ion-text-capitalize">
-    scans
-  </ion-item>
-  
-  <ion-item button routerLink="results" class="ion-text-capitalize">
-    results
-  </ion-item>
-  
-  <ion-item button routerLink="sellers" class="ion-text-capitalize">
-    sellers
-  </ion-item>
-  
-  <ion-item button routerLink="mistscans" class="ion-text-capitalize">
-    mistscans
-  </ion-item>
-  
-  <ion-item button (click)="resetIntro()" color="tertiary">
-    Reset intro
-  </ion-item>
-  -->
-  
+    <ion-card-content>
+      <ion-list>
+        
+        <ion-item noline>
+          Number of passengers: {{livepassengercount}}
+        </ion-item>
+        <ion-item>
+          Last checked: {{livepassengercounttime}}
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</div>
 </ion-content>
 
